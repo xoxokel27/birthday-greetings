@@ -7,7 +7,7 @@ function showMessage() {
   // Change the gift box to the opened version
   giftImage.src = './src/img/gift-open.png';
   gift.classList.add('open'); 
-  
+  // grrr
   // Show the birthday message with a fade-in effect
   message.style.display = "block";
   message.style.opacity = 0; 
