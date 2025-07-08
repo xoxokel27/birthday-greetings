@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Kels!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="./src/img/cake.svg">
+</head>
+<body onclick="startAudio()">
+  <audio id="hbdAudio" class="hbd-aud" autoplay loop>
+  <source src="./src/sfx/birthday-song.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+  <div class="scene">
+    <!-- Flags -->
+    <img class="flag left" src="./src/img/flag-left.png" alt="Flag Left">
+    <img class="flag right" src="./src/img/flag-right.png" alt="Flag Right">
+
+    <!-- Balloons -->
+    <img class="balloon left" src="./src/img/balloon-left.png" alt="Balloon Left">
+    <img class="balloon right" src="./src/img/balloon-right.png" alt="Balloon Right">
+
+    <!-- Celebrant Picture -->
+    <div class="photo-container">
+        <img class="photo" src="./src/img/lea.jpg" alt="Kels' Photo">
+        <img class="confetti-frame" src="./src/img/Confetti.png" alt="Confetti Frame">
+    </div>
+
+    <!-- Gift -->
+    <div class="gift" onclick="showMessage()">
+      <img id="giftImage" src="./src/img/gift.png" alt="Gift">
+      <p id="mess" style="font-family: 'Cupcake', cursive; font-weight: bold; font-size: x-large;">Tap the gift!</p>
+    </div>
+
+    <!-- Message -->
+    <div class="message" id="message">
+      <h1>HAPPY 23RD BIRTHDAY! MAHAL 🎂🎉</h1>
+      <p class="wish">Wishing you soaper joy, love, and laughter on your special day. I love you always 😘😘😘👉👌💦</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("./src/img/bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wish {
+  font-family: "Cupcake", Georgia, serif, Times;
+  font-weight: bold;
+  font-size: x-large;
+  color: purple;
+  text-align: justify;
+}
+.message h1 {
+  text-align: center;
+  font-family: "Cupcake", cursive;
+  color: purple;
+}
+.gift #mess {
+  text-align: center;
+  font-size: 100px;
+  color: pink;
+}
+/* Scene Container */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex; /* enable flexbox */
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  text-align: center;
+}
+
+/* Flags */
+.flag {
+  position: absolute;
+  top: 0;
+  width: 480px;
+}
+.flag.left {
+  left: 0;
+}
+.flag.right {
+  right: 0;
+}
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  width: 250px;
+  animation: float 6s ease-in-out infinite;
+}
+.balloon.left {
+  left: 25%;
+  top: 15%;
+}
+.balloon.right {
+  right: 25%;
+  top: 15%;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+/* Gift */
+.gift {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 4;
+}
+.gift img {
+  width: 100%;
+}
+.gift.open img {
+  bottom: 100px;
+  width: 185px; /* Set the size for the opened gift here */
+  position: relative;
+  transition: width 0.3s ease; /* Smooth animation */
+}
+/* Message */
+.message {
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  z-index: 5;
+}
+.message h1 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+.message p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.photo-container {
+  bottom: 200px;
+  position: relative;
+  width: 200px; /* Set size of the frame */
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Photo inside the frame */
+.photo {
+  width: 150px; /* Slightly smaller than container so frame shows */
+  height: 150px;
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Confetti frame */
+.confetti-frame {
+  width: 200px; /* Same as container size */
+  height: 200px;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none; /* Make sure frame isn’t clickable */
+}
+
+/* Responsive for tablets */
+@media (max-width: 768px) {
+  .flag {
+    width: 180px;
+  }
+  .balloon {
+    width: 160px;
+  }
+  .balloon.left {
+    left: 15%;
+  }
+  .balloon.right {
+    right: 15%;
+  }
+  .gift {
+    width: 120px;
+    bottom: 180px;
+  }
+  .message {
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .message h1 {
+    font-size: 20px;
+  }
+  .message p {
+    font-size: 14px;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+  .photo {
+    max-width: 200px; /* smaller on phones */
+  }
+  .flag {
+    width: 150px;
+    top: 0;
+    position: absolute;
+    z-index: 3;
+  }
+  .balloon {
+    width: 120px;
+    top: 30%;
+    position: absolute;
+    z-index: 3;
+  }
+  .balloon.left {
+    left: 10%;
+  }
+  .balloon.right {
+    right: 10%;
+  }
+  .gift {
+    width: 150px;
+    bottom: 200px;
+    position: block;
+  }
+  .message {
+    z-index: 5;
+    width: 200px;
+    padding: 12px;
+    bottom: 150px;
+  }
+  .gift.open img {
+    width: 100%;
+    bottom: 120px;
+    position: relative;
+    transition: opacity 0.5s ease;
+  }
+}
+@media (max-width: 375px) {
+  .photo {
+    max-width: 200px; /* smaller on phones */
+    top: 100px;
+  }
+  .flag {
+    width: 120px;
+    top: 0;
+    position: absolute;
+    z-index: 3;
+  }
+  .balloon {
+    width: 90px;
+
+    position: absolute;
+    z-index: 3;
+  }
+  .balloon.left {
+    left: 10%;
+  }
+  .balloon.right {
+    right: 10%;
+  }
+  .gift {
+    width: 100px;
+    bottom: 80px;
+  }
+  .message {
+    z-index: 5;
+    width: 200px;
+    padding: 12px;
+    bottom: 50px;
+  }
+  .confetti-frame {
+    width: 200px; /* Same as container size */
+    height: 200px;
+    top: 75px;
+    position: absolute;
+    z-index: 2;
+    pointer-events: none; /* Make sure frame isn’t clickable */
+  }
+  .gift.open img {
+    width: 100%;
+    bottom: 120px;
+    position: relative;
+    transition: opacity 0.5s ease;
+  }
+}
